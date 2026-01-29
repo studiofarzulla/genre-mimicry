@@ -1,0 +1,103 @@
+
+% Table 1: Disclaimer Rates by Genre (All Models)
+\begin{table}[htbp]
+\centering
+\caption{Disclaimer Rates by Content Genre}
+\label{tab:disclaimer-rates-genre}
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Genre} & \textbf{N} & \textbf{Disclaimers} & \textbf{Rate} \\
+\midrule
+Chemistry & 49 & 33 & 0.673 \\
+Finance_Fraud & 45 & 35 & 0.778 \\
+InfoSec & 65 & 33 & 0.508 \\
+Violence & 56 & 17 & 0.304 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% Table 2: Disclaimer Rates by Model
+\begin{table}[htbp]
+\centering
+\caption{Disclaimer Rates by Model}
+\label{tab:disclaimer-rates-model}
+\begin{tabular}{lrrrl}
+\toprule
+\textbf{Model} & \textbf{N} & \textbf{Disclaimers} & \textbf{Rate} & \textbf{Type} \\
+\midrule
+Devstral-Small & 20 & 13 & 0.650 & Control \\
+GPT-OSS-20B-Abl & 20 & 3 & 0.150 & Abliterated \\
+Gemma3-27B-Abl & 20 & 14 & 0.700 & Abliterated \\
+Llama-MoE-18B-Abl & 20 & 9 & 0.450 & Abliterated \\
+Qwen2.5-32B-Abl & 24 & 18 & 0.750 & Abliterated \\
+Qwen2.5-32B-Abl-2 & 40 & 20 & 0.500 & Abliterated \\
+Qwen3-30B & 40 & 29 & 0.725 & Control \\
+Qwen3-8B-Abl & 11 & 2 & 0.182 & Abliterated \\
+Qwen3-VL-8B-Abl & 20 & 10 & 0.500 & Abliterated \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% Table 3: Violence Gap Analysis
+\begin{table}[htbp]
+\centering
+\caption{Violence Gap: Violence vs.\ Other Genres}
+\label{tab:violence-gap}
+\begin{tabular}{lrrrrr}
+\toprule
+\textbf{Category} & \textbf{N} & \textbf{Rate} & \textbf{OR} & \textbf{95\% CI} & \textbf{$p$-value} \\
+\midrule
+Violence & 56 & 0.304 & \multirow{2}{*}{3.99} & \multirow{2}{*}{[2.08, 7.69]} & \multirow{2}{*}{$0.0000$} \\
+Other & 159 & 0.635 & & & \\
+\midrule
+\multicolumn{6}{l}{\textit{Effect size: Cram\'er's V = 0.282}} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% Table 4: Violence Gap by Model
+\begin{table}[htbp]
+\centering
+\caption{Violence Gap by Model}
+\label{tab:violence-gap-model}
+\begin{tabular}{lrrrrl}
+\toprule
+\textbf{Model} & \textbf{Violence} & \textbf{Other} & \textbf{Gap} & \textbf{$p$-value} & \textbf{Sig.} \\
+\midrule
+Devstral-Small & 0.400 & 0.733 & 0.333 & 0.2898 &  \\
+GPT-OSS-20B-Abl & 0.200 & 0.133 & -0.067 & 1.0000 &  \\
+Gemma3-27B-Abl & 0.000 & 0.933 & 0.933 & 0.0004 & *** \\
+Llama-MoE-18B-Abl & 0.800 & 0.333 & -0.467 & 0.1273 &  \\
+Qwen2.5-32B-Abl & 0.400 & 1.000 & 0.600 & 0.0016 & ** \\
+Qwen2.5-32B-Abl-2 & 0.200 & 0.600 & 0.400 & 0.0648 &  \\
+Qwen3-30B & 0.400 & 0.833 & 0.433 & 0.0144 & * \\
+Qwen3-8B-Abl & 0.000 & 0.200 & 0.200 & 1.0000 &  \\
+Qwen3-VL-8B-Abl & 0.000 & 0.667 & 0.667 & 0.0325 & * \\
+\bottomrule
+\multicolumn{6}{l}{\footnotesize $^{*}p<0.05$, $^{**}p<0.01$, $^{***}p<0.001$ (Fisher's exact test)} \\
+\end{tabular}
+\end{table}
+
+
+% Table 5: Pairwise Genre Comparisons (Fisher's Exact with Holm Correction)
+\begin{table}[htbp]
+\centering
+\caption{Pairwise Genre Comparisons (Holm-adjusted)}
+\label{tab:pairwise-comparisons}
+\begin{tabular}{lrrrrr}
+\toprule
+\textbf{Comparison} & \textbf{Rate 1} & \textbf{Rate 2} & \textbf{OR} & \textbf{$p$} & \textbf{$p_{\text{Holm}}$} \\
+\midrule
+InfoSec vs Violence & 0.508 & 0.304 & 2.37 & 0.0272 & 0.0815 \\
+InfoSec vs Chemistry & 0.508 & 0.673 & 0.50 & 0.0872 & 0.1745 \\
+InfoSec vs Finance_Fraud & 0.508 & 0.778 & 0.29 & 0.0052 & 0.0207* \\
+Violence vs Chemistry & 0.304 & 0.673 & 0.21 & 0.0002 & 0.0010*** \\
+Violence vs Finance_Fraud & 0.304 & 0.778 & 0.12 & 0.0000 & 0.0000*** \\
+Chemistry vs Finance_Fraud & 0.673 & 0.778 & 0.59 & 0.3563 & 0.3563 \\
+\bottomrule
+\multicolumn{6}{l}{\footnotesize $^{*}p_{\text{Holm}}<0.05$, $^{**}p_{\text{Holm}}<0.01$, $^{***}p_{\text{Holm}}<0.001$} \\
+\end{tabular}
+\end{table}

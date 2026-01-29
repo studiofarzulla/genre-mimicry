@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+type: article
+authors:
+  - family-names: "Farzulla"
+    given-names: "Murad"
+    orcid: "https://orcid.org/0009-0002-7164-8704"
+    email: "murad@dissensus.ai"
+    affiliation: "King's College London"
+title: "Genre Mimicry vs. Ethical Reasoning in Abliterated Language Models: Why Training Data Conventions Persist After Safety Removal"
+abstract: "Abliterated language models—those with safety fine-tuning removed—are commonly assumed to have lost their ethical reasoning capabilities. This paper presents evidence that apparent ethical reasoning in language models is substantially influenced by genre convention mimicry: the reproduction of professional writing norms from training data rather than genuine moral cognition. Through a multi-model empirical study (n=9 architectures, N=215 prompts), we observe genre-dependent disclaimer rates: 77.8% for finance, 67.3% for chemistry, 50.8% for infosec, but only 30.4% for violence (the 'Violence Gap'). GEE logistic regression confirms Finance (OR=9.63, p<0.001) and Chemistry (OR=5.21, p=0.034) effects with cluster-robust inference."
+keywords:
+  - abliteration
+  - safety fine-tuning
+  - language models
+  - genre mimicry
+  - training data
+  - AI safety
+  - AI alignment
+  - jailbreaking
+  - LLM
+version: "2.0.0"
+date-released: "2026-01-29"
+license: "MIT"
+repository-code: "https://github.com/studiofarzulla/genre-mimicry"
+url: "https://farzulla.org"

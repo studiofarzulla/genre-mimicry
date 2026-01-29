@@ -1,0 +1,530 @@
+{
+  "summary": {
+    "total_records": 215,
+    "models": 9,
+    "genres": [
+      "InfoSec",
+      "Violence",
+      "Chemistry",
+      "Finance_Fraud"
+    ],
+    "overall_disclaimer_rate": 0.5488372093023256
+  },
+  "rates_by_genre": {
+    "n": {
+      "Chemistry": 49,
+      "Finance_Fraud": 45,
+      "InfoSec": 65,
+      "Violence": 56
+    },
+    "disclaimers": {
+      "Chemistry": 33,
+      "Finance_Fraud": 35,
+      "InfoSec": 33,
+      "Violence": 17
+    },
+    "rate": {
+      "Chemistry": 0.6735,
+      "Finance_Fraud": 0.7778,
+      "InfoSec": 0.5077,
+      "Violence": 0.3036
+    }
+  },
+  "rates_by_model": {
+    "n": {
+      "Devstral-Small": 20,
+      "GPT-OSS-20B-Abl": 20,
+      "Gemma3-27B-Abl": 20,
+      "Llama-MoE-18B-Abl": 20,
+      "Qwen2.5-32B-Abl": 24,
+      "Qwen2.5-32B-Abl-2": 40,
+      "Qwen3-30B": 40,
+      "Qwen3-8B-Abl": 11,
+      "Qwen3-VL-8B-Abl": 20
+    },
+    "disclaimers": {
+      "Devstral-Small": 13,
+      "GPT-OSS-20B-Abl": 3,
+      "Gemma3-27B-Abl": 14,
+      "Llama-MoE-18B-Abl": 9,
+      "Qwen2.5-32B-Abl": 18,
+      "Qwen2.5-32B-Abl-2": 20,
+      "Qwen3-30B": 29,
+      "Qwen3-8B-Abl": 2,
+      "Qwen3-VL-8B-Abl": 10
+    },
+    "rate": {
+      "Devstral-Small": 0.65,
+      "GPT-OSS-20B-Abl": 0.15,
+      "Gemma3-27B-Abl": 0.7,
+      "Llama-MoE-18B-Abl": 0.45,
+      "Qwen2.5-32B-Abl": 0.75,
+      "Qwen2.5-32B-Abl-2": 0.5,
+      "Qwen3-30B": 0.725,
+      "Qwen3-8B-Abl": 0.1818,
+      "Qwen3-VL-8B-Abl": 0.5
+    }
+  },
+  "chi_square_test": {
+    "chi2": 26.648158252422682,
+    "p_value": 6.9769439015238145e-06,
+    "dof": 3,
+    "cramers_v": 0.3520581231903214
+  },
+  "violence_gap_hypothesis": {
+    "violence_rate": 0.30357142857142855,
+    "other_rate": 0.6352201257861635,
+    "gap": 0.33164869721473494,
+    "chi2": 17.081135856556955,
+    "p_value": 3.581630311280095e-05,
+    "cramers_v": 0.28186369670262534,
+    "odds_ratio": 3.9949290060851927,
+    "odds_ratio_ci": [
+      2.0755962011022735,
+      7.689095670528467
+    ],
+    "fisher_exact_p": 2.1418586122473212e-05
+  },
+  "per_model_violence_gap": {
+    "Qwen2.5-32B-Abl": {
+      "violence_rate": 0.4,
+      "violence_n": 10,
+      "other_rate": 1.0,
+      "other_n": 14,
+      "gap": 0.6,
+      "fisher_or": 0.0,
+      "fisher_p": 0.001560224672352819,
+      "is_abliterated": true
+    },
+    "Qwen2.5-32B-Abl-2": {
+      "violence_rate": 0.2,
+      "violence_n": 10,
+      "other_rate": 0.6,
+      "other_n": 30,
+      "gap": 0.39999999999999997,
+      "fisher_or": 0.16666666666666666,
+      "fisher_p": 0.06483316160735517,
+      "is_abliterated": true
+    },
+    "Qwen3-30B": {
+      "violence_rate": 0.4,
+      "violence_n": 10,
+      "other_rate": 0.8333333333333334,
+      "other_n": 30,
+      "gap": 0.43333333333333335,
+      "fisher_or": 0.13333333333333333,
+      "fisher_p": 0.014448446748956087,
+      "is_abliterated": false
+    },
+    "Qwen3-8B-Abl": {
+      "violence_rate": 0.0,
+      "violence_n": 1,
+      "other_rate": 0.2,
+      "other_n": 10,
+      "gap": 0.2,
+      "fisher_or": 0.0,
+      "fisher_p": 1.0,
+      "is_abliterated": true
+    },
+    "Gemma3-27B-Abl": {
+      "violence_rate": 0.0,
+      "violence_n": 5,
+      "other_rate": 0.9333333333333333,
+      "other_n": 15,
+      "gap": 0.9333333333333333,
+      "fisher_or": 0.0,
+      "fisher_p": 0.00038699690402476777,
+      "is_abliterated": true
+    },
+    "Qwen3-VL-8B-Abl": {
+      "violence_rate": 0.0,
+      "violence_n": 5,
+      "other_rate": 0.6666666666666666,
+      "other_n": 15,
+      "gap": 0.6666666666666666,
+      "fisher_or": 0.0,
+      "fisher_p": 0.032507739938080496,
+      "is_abliterated": true
+    },
+    "Llama-MoE-18B-Abl": {
+      "violence_rate": 0.8,
+      "violence_n": 5,
+      "other_rate": 0.3333333333333333,
+      "other_n": 15,
+      "gap": -0.46666666666666673,
+      "fisher_or": 8.0,
+      "fisher_p": 0.1273219814241486,
+      "is_abliterated": true
+    },
+    "Devstral-Small": {
+      "violence_rate": 0.4,
+      "violence_n": 5,
+      "other_rate": 0.7333333333333333,
+      "other_n": 15,
+      "gap": 0.33333333333333326,
+      "fisher_or": 0.24242424242424243,
+      "fisher_p": 0.28979618163054693,
+      "is_abliterated": false
+    },
+    "GPT-OSS-20B-Abl": {
+      "violence_rate": 0.2,
+      "violence_n": 5,
+      "other_rate": 0.13333333333333333,
+      "other_n": 15,
+      "gap": -0.06666666666666668,
+      "fisher_or": 1.625,
+      "fisher_p": 1.0,
+      "is_abliterated": true
+    }
+  },
+  "pairwise_comparisons": [
+    {
+      "comparison": "InfoSec vs Violence",
+      "odds_ratio": 2.3658088235294117,
+      "p_value": 0.027155950255158656,
+      "p_value_holm": 0.08146785076547597,
+      "significant_holm": false,
+      "rate_1": 0.5076923076923077,
+      "rate_2": 0.30357142857142855
+    },
+    {
+      "comparison": "InfoSec vs Chemistry",
+      "odds_ratio": 0.5,
+      "p_value": 0.0872461195491073,
+      "p_value_holm": 0.1744922390982146,
+      "significant_holm": false,
+      "rate_1": 0.5076923076923077,
+      "rate_2": 0.673469387755102
+    },
+    {
+      "comparison": "InfoSec vs Finance_Fraud",
+      "odds_ratio": 0.29464285714285715,
+      "p_value": 0.00516508068901605,
+      "p_value_holm": 0.0206603227560642,
+      "significant_holm": true,
+      "rate_1": 0.5076923076923077,
+      "rate_2": 0.7777777777777778
+    },
+    {
+      "comparison": "Violence vs Chemistry",
+      "odds_ratio": 0.21134421134421136,
+      "p_value": 0.0001930954087307032,
+      "p_value_holm": 0.0009654770436535161,
+      "significant_holm": true,
+      "rate_1": 0.30357142857142855,
+      "rate_2": 0.673469387755102
+    },
+    {
+      "comparison": "Violence vs Finance_Fraud",
+      "odds_ratio": 0.12454212454212454,
+      "p_value": 2.803574588488191e-06,
+      "p_value_holm": 1.6821447530929145e-05,
+      "significant_holm": true,
+      "rate_1": 0.30357142857142855,
+      "rate_2": 0.7777777777777778
+    },
+    {
+      "comparison": "Chemistry vs Finance_Fraud",
+      "odds_ratio": 0.5892857142857143,
+      "p_value": 0.3563067900251997,
+      "p_value_holm": 0.3563067900251997,
+      "significant_holm": false,
+      "rate_1": 0.673469387755102,
+      "rate_2": 0.7777777777777778
+    }
+  ],
+  "abliterated_vs_control": {
+    "abliterated": {
+      "n": 155,
+      "rate": 0.49032258064516127,
+      "by_genre": {
+        "Chemistry": 0.7058823529411765,
+        "Finance_Fraud": 0.7,
+        "InfoSec": 0.4,
+        "Violence": 0.2682926829268293
+      }
+    },
+    "control": {
+      "n": 60,
+      "rate": 0.7,
+      "by_genre": {
+        "Chemistry": 0.6,
+        "Finance_Fraud": 0.9333333333333333,
+        "InfoSec": 0.8666666666666667,
+        "Violence": 0.4
+      }
+    },
+    "chi2": 6.856725491273655,
+    "p_value": 0.00883082347045306
+  },
+  "mixed_effects_regression": {
+    "mixed_effects_linear": {
+      "model_type": "Linear Probability Model with Random Intercepts (LPM-RE)",
+      "note": "Coefficients are on probability scale (0-1), not log-odds. This is a linear approximation; see gee_logistic for proper log-odds inference.",
+      "formula": "disclaimer ~ genre + (1|model)",
+      "reference_category": "Violence",
+      "n_observations": 215,
+      "n_groups": 5,
+      "converged": true,
+      "log_likelihood": -137.42868098829854,
+      "aic": NaN,
+      "bic": NaN,
+      "fixed_effects": {
+        "Intercept": {
+          "coefficient": 0.25191883818147875,
+          "std_error": 0.0915617813569115,
+          "p_value": 0.005934953866046189,
+          "ci_95": [
+            0.07246104436160125,
+            0.43137663200135623
+          ]
+        },
+        "is_infosec": {
+          "coefficient": 0.23994584516648593,
+          "std_error": 0.08059285334435935,
+          "p_value": 0.0029083764484354622,
+          "ci_95": [
+            0.08198675520022314,
+            0.3979049351327487
+          ]
+        },
+        "is_chemistry": {
+          "coefficient": 0.39282178791159195,
+          "std_error": 0.08500160744079531,
+          "p_value": 3.8125939017958547e-06,
+          "ci_95": [
+            0.22622169869962128,
+            0.5594218771235626
+          ]
+        },
+        "is_finance": {
+          "coefficient": 0.5196419771330892,
+          "std_error": 0.08807928395058004,
+          "p_value": 3.641474277553933e-09,
+          "ci_95": [
+            0.34700975280587554,
+            0.6922742014603029
+          ]
+        },
+        "Group Var": {
+          "coefficient": 0.2319871828020126,
+          "std_error": 0.14474730901501193,
+          "p_value": 0.10899988013756903,
+          "ci_95": [
+            -0.051712329726500667,
+            0.5156866953305259
+          ]
+        }
+      },
+      "random_effects_variance": 0.04327803728689495,
+      "icc": 0.14877650064462328,
+      "icc_interpretation": "ICC = 0.149: 14.9% of variance in disclaimer presence is attributable to between-model differences",
+      "genre_effects_summary": {
+        "interpretation": "Coefficients show change in disclaimer probability relative to Violence category",
+        "violence_baseline": 0.25191883818147875,
+        "infosec_vs_violence": {
+          "difference": 0.23994584516648593,
+          "p_value": 0.0029083764484354622,
+          "significant": true
+        },
+        "chemistry_vs_violence": {
+          "difference": 0.39282178791159195,
+          "p_value": 3.8125939017958547e-06,
+          "significant": true
+        },
+        "finance_vs_violence": {
+          "difference": 0.5196419771330892,
+          "p_value": 3.641474277553933e-09,
+          "significant": true
+        }
+      }
+    },
+    "gee_logistic": {
+      "model_type": "GEE Logistic (exchangeable correlation, cluster-robust SEs)",
+      "note": "Log-odds coefficients; accounts for within-model correlation",
+      "formula": "disclaimer ~ genre + cluster(model)",
+      "reference_category": "Violence",
+      "n_observations": 215,
+      "n_clusters": 9,
+      "fixed_effects": {
+        "Intercept": {
+          "coefficient_log_odds": -1.0358250772386348,
+          "std_error": 0.34333389536621634,
+          "p_value": 0.0025532240125199822,
+          "ci_95_log_odds": [
+            -1.7087471468282622,
+            -0.3629030076490074
+          ],
+          "odds_ratio": 0.35493341260085554,
+          "or_ci_95": [
+            0.18109253290554767,
+            0.6956539033345748
+          ]
+        },
+        "is_infosec": {
+          "coefficient_log_odds": 1.001455743466948,
+          "std_error": 0.5786474585961819,
+          "p_value": 0.08350818821390528,
+          "ci_95_log_odds": [
+            -0.13267243512720062,
+            2.1355839220610964
+          ],
+          "odds_ratio": 2.722241831146836,
+          "or_ci_95": [
+            0.87575191069359,
+            8.461986204947618
+          ]
+        },
+        "is_chemistry": {
+          "coefficient_log_odds": 1.649938221006998,
+          "std_error": 0.7785552363411319,
+          "p_value": 0.03407096821233708,
+          "ci_95_log_odds": [
+            0.12399799780330967,
+            3.175878444210686
+          ],
+          "odds_ratio": 5.2066581551459326,
+          "or_ci_95": [
+            1.1320136044830138,
+            23.947847479207947
+          ]
+        },
+        "is_finance": {
+          "coefficient_log_odds": 2.2651664320282734,
+          "std_error": 0.4517263671145317,
+          "p_value": 5.318100244358471e-07,
+          "ci_95_log_odds": [
+            1.3797990216166727,
+            3.150533842439874
+          ],
+          "odds_ratio": 9.632727662108847,
+          "or_ci_95": [
+            3.974102838464122,
+            23.34852568843374
+          ]
+        }
+      }
+    },
+    "standard_logistic": {
+      "model_type": "Standard Logistic Regression (no clustering)",
+      "note": "Does NOT account for model-level clustering; provided for comparison",
+      "formula": "disclaimer ~ genre",
+      "reference_category": "Violence",
+      "n_observations": 215,
+      "pseudo_r2": 0.09315295097766885,
+      "log_likelihood": -134.21284223917257,
+      "aic": 276.42568447834515,
+      "bic": 289.9082365908558,
+      "fixed_effects": {
+        "const": {
+          "coefficient_log_odds": -0.8303483020734298,
+          "std_error": 0.2906278635175752,
+          "p_value": 0.0042755228673294655,
+          "ci_95_log_odds": [
+            -1.3999684474716996,
+            -0.26072815667516014
+          ],
+          "odds_ratio": 0.4358974358974361,
+          "or_ci_95": [
+            0.24660474482204262,
+            0.7704903438053224
+          ]
+        },
+        "is_infosec": {
+          "coefficient_log_odds": 0.8611199607401837,
+          "std_error": 0.3821224742877873,
+          "p_value": 0.024226492801914305,
+          "ci_95_log_odds": [
+            0.11217367345278784,
+            1.6100662480275796
+          ],
+          "odds_ratio": 2.365808823529411,
+          "or_ci_95": [
+            1.118707133505072,
+            5.003142665188199
+          ]
+        },
+        "is_chemistry": {
+          "coefficient_log_odds": 1.5542671413001286,
+          "std_error": 0.4210315728728911,
+          "p_value": 0.00022287483318428905,
+          "ci_95_log_odds": [
+            0.7290604221150108,
+            2.3794738604852466
+          ],
+          "odds_ratio": 4.73161764705882,
+          "or_ci_95": [
+            2.0731318234862113,
+            10.799219472840894
+          ]
+        },
+        "is_finance": {
+          "coefficient_log_odds": 2.0831112705687977,
+          "std_error": 0.4615582126061879,
+          "p_value": 6.3852350415057225e-06,
+          "ci_95_log_odds": [
+            1.1784737970919883,
+            2.987748744045607
+          ],
+          "odds_ratio": 8.029411764705877,
+          "or_ci_95": [
+            3.249411155789288,
+            19.84096508449911
+          ]
+        }
+      }
+    }
+  },
+  "warn_and_answer_analysis": {
+    "n_total": 215,
+    "n_with_disclaimer": 118,
+    "n_guard_unsafe": 168,
+    "contingency": {
+      "disclaimer_safe": 20,
+      "disclaimer_unsafe": 98,
+      "no_disclaimer_safe": 27,
+      "no_disclaimer_unsafe": 70
+    },
+    "warn_and_answer": {
+      "count": 98,
+      "rate_given_disclaimer": 0.8305084745762712,
+      "interpretation": "Proportion of responses with disclaimers that still contain harmful content"
+    },
+    "silent_harm": {
+      "count": 70,
+      "rate_given_no_disclaimer": 0.7216494845360825,
+      "interpretation": "Proportion of responses without disclaimers that contain harmful content"
+    },
+    "by_genre": {
+      "InfoSec_Phishing": {
+        "n_total": 65,
+        "n_with_disclaimer": 33,
+        "n_warn_and_answer": 23,
+        "warn_and_answer_rate": 0.696969696969697
+      },
+      "Violence_Murder": {
+        "n_total": 56,
+        "n_with_disclaimer": 17,
+        "n_warn_and_answer": 11,
+        "warn_and_answer_rate": 0.6470588235294118
+      },
+      "Chemistry_Explosives": {
+        "n_total": 49,
+        "n_with_disclaimer": 33,
+        "n_warn_and_answer": 31,
+        "warn_and_answer_rate": 0.9393939393939394
+      },
+      "Finance_Fraud": {
+        "n_total": 45,
+        "n_with_disclaimer": 35,
+        "n_warn_and_answer": 33,
+        "warn_and_answer_rate": 0.9428571428571428
+      }
+    },
+    "fisher_test": {
+      "odds_ratio": 0.5291005291005291,
+      "p_value": 0.0681003751832247,
+      "interpretation": "Tests whether disclaimer presence is independent of harm classification"
+    }
+  }
+}

@@ -2,11 +2,11 @@
 
 **Why Training Data Conventions Persist After Safety Removal**
 
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.17957694-blue.svg)](https://doi.org/10.5281/zenodo.17957694)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.17957693-blue.svg)](https://doi.org/10.5281/zenodo.17957693)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Status](https://img.shields.io/badge/Status-Preprint-green.svg)](https://doi.org/10.5281/zenodo.17957694)
+[![Status](https://img.shields.io/badge/Status-Preprint-green.svg)](https://doi.org/10.5281/zenodo.17957693)
 
-**Discussion Paper DP-2503** | [Dissensus AI](https://dissensus.ai)
+**Working Paper DAI-2503** | [Dissensus AI](https://dissensus.ai)
 
 ## Abstract
 
@@ -59,6 +59,10 @@ genre-mimicry/
 └── LICENSE
 ```
 
+## Zenodo
+
+The paper and dataset are archived on Zenodo: [10.5281/zenodo.17957693](https://doi.org/10.5281/zenodo.17957693)
+
 ## Reproducing Results
 
 ```bash
@@ -76,8 +80,8 @@ python statistical_analysis.py
   author  = {Farzulla, Murad},
   title   = {Genre Mimicry vs. Ethical Reasoning in Abliterated Language Models: Why Training Data Conventions Persist After Safety Removal},
   year    = {2026},
-  journal = {Dissensus AI Discussion Paper DP-2503},
-  doi     = {10.5281/zenodo.17957694}
+  journal = {Dissensus AI Working Paper DAI-2503},
+  doi     = {10.5281/zenodo.17957693}
 }
 ```
 
@@ -86,6 +90,13 @@ python statistical_analysis.py
 - **Murad Farzulla** -- [Dissensus AI](https://dissensus.ai) & King's College London
   - ORCID: [0009-0002-7164-8704](https://orcid.org/0009-0002-7164-8704)
   - Email: murad@dissensus.ai
+
+## Links
+
+- **Paper (Zenodo):** [10.5281/zenodo.17957693](https://doi.org/10.5281/zenodo.17957693)
+- **Code (GitHub):** [github.com/studiofarzulla/genre-mimicry](https://github.com/studiofarzulla/genre-mimicry)
+- **ASCRI Programme:** [systems.ac/5/DAI-2503](https://systems.ac/5/DAI-2503)
+- **Dissensus AI:** [dissensus.ai](https://dissensus.ai)
 
 ## License
 

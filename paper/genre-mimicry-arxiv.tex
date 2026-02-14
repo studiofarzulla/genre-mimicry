@@ -1,23 +1,19 @@
 % ============================================================================
 % Genre Mimicry vs. Ethical Reasoning in Abliterated Language Models
-% ============================================================================
-% arXiv-style single-column format - REVISED VERSION
-% Addressing reviewer concerns for top venue submission (ACL/NeurIPS/FAccT)
+% Dissensus AI Working Paper — Template v3.0.0
 % ============================================================================
 
-\documentclass[letterpaper,11pt]{article}
+\documentclass[11pt,a4paper]{article}
 
 % ============================================================================
 % PACKAGES
 % ============================================================================
 
 % Typography and layout
-\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{mathpazo}  % Palatino font
-\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{mathptmx}
+\usepackage[a4paper, margin=1in]{geometry}
 \usepackage{setspace}
-\setstretch{1.1}
 
 % Mathematics
 \usepackage{amsmath}
@@ -36,34 +32,63 @@
 
 % References and links
 \usepackage[round,authoryear]{natbib}
-\bibliographystyle{plainnat}
 \usepackage{xcolor}
-\definecolor{farzullaburgundy}{RGB}{128,0,32}
+\definecolor{brandburgundy}{RGB}{128,0,32}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
-    linkcolor=farzullaburgundy,
-    citecolor=farzullaburgundy,
-    urlcolor=farzullaburgundy,
+    linkcolor=brandburgundy,
+    citecolor=brandburgundy,
+    urlcolor=brandburgundy,
     pdftitle={Genre Mimicry vs. Ethical Reasoning in Abliterated Language Models},
     pdfauthor={Murad Farzulla}
 }
 
 % Formatting
 \usepackage{enumitem}
-\usepackage{tcolorbox}
 \usepackage{url}
 \def\UrlBreaks{\do\/\do-\do_}
 
-% Header/footer - minimal
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\fancyfoot[C]{\thepage}
-
 % For appendix
 \usepackage{appendix}
+
+% ============================================================================
+% VERSION AND METADATA
+% ============================================================================
+
+\newcommand{\papernum}{DAI-2503}              % Discussion paper number
+\newcommand{\paperver}{1.0.0}
+\newcommand{\paperdate}{January 2026}
+\newcommand{\paperdoi}{10.5281/zenodo.17957694}
+\newcommand{\paperurl}{https://systems.ac/5/DAI-2503}  % ASCRI page
+
+% ============================================================================
+% HEADER AND FOOTER CONFIGURATION
+% ============================================================================
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \fancyfoot[C]{\small\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+% Section formatting
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{2ex plus 0.8ex minus 0.2ex}{1ex plus 0.3ex}
+\titlespacing*{\subsection}{0pt}{1.5ex plus 0.5ex minus 0.2ex}{0.8ex plus 0.2ex}
+\titlespacing*{\subsubsection}{0pt}{1.2ex plus 0.4ex minus 0.2ex}{0.6ex plus 0.2ex}
+\titleformat{\section}{\normalfont\large\bfseries\color{brandburgundy}}{\thesection}{0.5em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries\color{brandburgundy}}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}{\normalfont\small\bfseries\color{brandburgundy}}{\thesubsubsection}{0.5em}{}
 
 % ============================================================================
 % DOCUMENT
@@ -71,22 +96,33 @@
 
 \begin{document}
 
-% ============================================================================
-% TITLE PAGE
-% ============================================================================
+\thispagestyle{firstpage}
 
-\title{\textbf{Genre Mimicry vs. Ethical Reasoning in Abliterated Language Models} \\
-\large Why Training Data Conventions Persist After Safety Removal}
+\begin{center}
+{\small\textsc{\href{https://dissensus.ai}{Dissensus AI} Working Paper Series}}\\[0.2em]
+{\small \href{\paperurl}{\papernum}}
+\end{center}
 
-\author{Murad Farzulla$^{1,2}$\\[0.3em]
-{\small $^1$\,King's College London}\\[0.3em]
-{\small $^2$\,\href{https://dissensus.ai}{Dissensus AI}}\\[0.3em]
-{\small \href{https://orcid.org/0009-0002-7164-8704}{ORCID: 0009-0002-7164-8704}}}
+\vspace{1.5em}
 
-\date{January 2026\\[0.5em]
-{\small Corresponding Author: \href{mailto:murad@dissensus.ai}{murad@dissensus.ai}}}
+\begin{center}
+{\LARGE\bfseries Genre Mimicry vs.\ Ethical Reasoning in Abliterated Language Models}\\[0.5em]
+{\large\itshape Why Training Data Conventions Persist After Safety Removal}\\[1.5em]
 
-\maketitle
+{\large Murad Farzulla}\textsuperscript{1,2,*}\\[0.8em]
+
+{\small
+  \textsuperscript{1}\href{https://dissensus.ai}{Dissensus AI}, London, UK \quad
+  \textsuperscript{2}King's College London, London, UK%
+}\\[0.5em]
+
+{\footnotesize
+  \textsuperscript{*}Correspondence: \href{mailto:murad@dissensus.ai}{murad@dissensus.ai}
+  \quad
+  ORCID: \href{https://orcid.org/0009-0002-7164-8704}{0009-0002-7164-8704}%
+}\\[0.3em]
+{\footnotesize \paperdate}
+\end{center}
 
 \begin{abstract}
 \noindent Abliterated language models---those with safety fine-tuning removed through techniques such as refusal direction orthogonalization---are commonly assumed to have lost their ethical reasoning capabilities. This paper challenges that assumption by presenting evidence that what appears to be ethical reasoning in language models is substantially influenced by \textbf{genre convention mimicry}: the reproduction of professional writing norms absorbed from training data rather than genuine moral cognition. Through a multi-model empirical study ($n=9$ architectures, $N=215$ prompts across four content genres), we observe a differential response pattern that warrants further safety research. Requests matching information security and finance genres generate disclaimers at rates of 50.8\% and 77.8\% respectively, while violence-related prompts produce disclaimers in only 30.4\% of cases. This ``Violence Gap'' is statistically significant ($\chi^2(1) = 17.08$, $p < 0.0001$, OR = 3.99) and persists across both abliterated and control models. GEE logistic regression with cluster-robust standard errors confirms Finance/Fraud (OR = 9.63, $p < 0.001$) and Chemistry (OR = 5.21, $p = 0.034$) effects, with InfoSec showing a weaker effect (OR = 2.72, $p = 0.084$) when properly accounting for model-level clustering (ICC = 0.149). We introduce the concept of \textit{Genre Vulnerability}---content domains exhibiting reduced safety behaviors due to the absence of native safety conventions in training corpora---and extend our analysis to a theoretical framework (the ``Parity Thesis'') proposing that human reasoning is similarly constrained by training distributions. We discuss directions for future research into genre-aware alignment strategies and the mechanistic basis of genre-dependent safety behaviors.
@@ -95,12 +131,7 @@
 \noindent\textbf{Keywords:} AI Safety, Abliteration, Language Models, Genre Theory, Training Data, Alignment, Professional Norms
 \end{abstract}
 
-\vspace{1em}
-
-\noindent\textbf{Acknowledgements.} The author acknowledges Claude (Anthropic) for assistance with analytical framework development and technical writing. The author thanks the developers of open-weight models used in this study. All errors, omissions, and interpretive limitations remain the author's responsibility.
-
-\vspace{0.5em}
-\noindent\textbf{Data \& Code Availability.} Analysis code and response data are available at \url{https://github.com/studiofarzulla/genre-mimicry}. Decoding parameters: Temperature = 0.7, max\_tokens = 512. Hardware: Consumer GPUs (24--48GB VRAM). Software: Python 3.11, pandas 2.1, statsmodels 0.14, scipy 1.11. All statistical tests are two-sided with $\alpha = 0.05$.
+\setstretch{1.15}
 
 \newpage
 
@@ -168,7 +199,7 @@ Emerging taxonomies of jailbreak attacks increasingly recognize ``context confus
 
 The technical foundation for abliteration was established by \citet{arditi2024refusal}, who demonstrated that refusal behavior in language models is mediated by a single direction in the model's representation space. By orthogonalizing this ``refusal direction,'' models can be made to comply with requests they would otherwise refuse. This finding has significant implications: if refusal can be removed through a simple linear operation, the underlying safety mechanism may be more superficial than previously assumed.
 
-Recent work in representation engineering~\citep{zou2023representation} and activation addition~\citep{turner2023activation} has shown that model behaviors can be systematically manipulated through targeted interventions in representation space. These findings support a view of safety behaviors as emergent from particular representational configurations rather than from deep ethical reasoning processes.
+Recent work in representation engineering~\citep{zou2023representation} and activation addition~\citep{turner2023activation} has shown that model behaviors can be systematically manipulated through targeted interventions in representation space. These findings support a view of safety behaviors as emergent from particular representational configurations rather than from deep ethical reasoning processes. \citet{young2025abliteration} provides the most comprehensive empirical landscape of abliteration to date, evaluating four abliteration tools across sixteen instruction-tuned models (7B--14B parameters). A critical finding for our work: mathematical reasoning capabilities exhibit the highest sensitivity to abliteration, with GSM8K performance varying by up to $-26.5\%$ relative depending on tool and architecture---while safety-adjacent behaviors show more variable patterns. This differential sensitivity supports our genre mimicry hypothesis: if safety behaviors were deeply integrated into the same representational structures as mathematical reasoning, they should show comparable sensitivity to abliteration. The fact that they do not suggests safety behaviors occupy a different representational stratum---one more consistent with surface-level genre conventions than with deep reasoning capabilities.
 
 \subsection{Over-Refusal and Safety Calibration}
 
@@ -184,7 +215,7 @@ Recent work has developed comprehensive frameworks for red-teaming and safety ev
 
 Our theoretical framework draws heavily from sociolinguistics, particularly the concept of linguistic registers---varieties of language used for particular purposes or in particular social settings~\citep{halliday1978language,biber1995dimensions}. Register theory provides a principled way to understand how context shapes linguistic choices independently of semantic content.
 
-Applied to language models, register theory suggests that models learn not just the semantic content of training data but also its stylistic properties, including the registers appropriate to different domains. Professional technical writing in information security systematically includes disclaimers about authorized use; fiction writing about violence typically does not. A model that has learned these register associations will reproduce them regardless of the ethical content of specific requests.
+This perspective connects to the broader debate about whether language models acquire genuine linguistic competence or reproduce statistical patterns from training distributions~\citep{bender2020climbing}. \citet{nguyen2025collaborative} surveys the intersection of LLMs and sociolinguistics, demonstrating how LLMs encode patterns of linguistic variation---including dialectal, register, and genre-specific patterns---from their training distributions. Critically, Nguyen observes that RLHF and related alignment procedures encode specific cultural and professional norms into model outputs, effectively selecting for particular sociolinguistic registers. This is directly relevant to our genre mimicry hypothesis: the safety conventions we observe are a \textit{specific instance} of the broader phenomenon Nguyen identifies, where alignment training amplifies pre-existing genre-specific behavioral norms from training data rather than instilling novel reasoning capabilities. Genre conventions are a form of sociolinguistic variation, and RLHF's safety training selectively reinforces the registers where cautionary language is already conventional---precisely the mechanism our empirical results demonstrate. Applied to language models, register theory suggests that models learn not just the semantic content of training data but also its stylistic properties, including the registers appropriate to different domains. Professional technical writing in information security systematically includes disclaimers about authorized use; fiction writing about violence typically does not. A model that has learned these register associations will reproduce them regardless of the ethical content of specific requests.
 
 % ============================================================================
 % THEORETICAL FRAMEWORK
@@ -233,7 +264,11 @@ Now consider a human expert. A finance analyst is a function $h_{\phi}: \mathcal
 
 \textbf{Clarifying the Claim}: We do not argue that LLMs and humans are computationally identical, nor that the parallel is anything more than structural. Human cognition involves embodiment, emotional processing, metacognition, and phenomenal experience that may fundamentally differ from transformer-based computation. The parallel is offered as a \textit{lens} through which to reconsider assumptions about ``genuine'' versus ``mimicked'' reasoning---not as an ontological claim about the nature of mind.
 
-The observation that human ethical behavior in professional contexts is also substantially conventional---doctors, lawyers, and engineers follow domain-specific ethical norms expressed through characteristic patterns of disclosure, warning, and consent---suggests that the distinction between ``genuine ethics'' and ``genre mimicry'' may be less clear than commonly assumed. The difference is that human professionals (ideally) understand the \textit{reasons} behind these conventions, while models may reproduce the conventions without the underlying understanding.
+Independent support for this perspective comes from \citet{sornette2026alignment}, who argue from relational models theory and statistical physics that LLM behaviors labeled as ``unethical'' are better understood as structural generalizations of interaction regimes that humans themselves enact---including coercive arrangements, authority relations, and ultimatum bargaining. Their central claim that ``human morality is plural, context-dependent, and historically contingent'' converges with our Parity Thesis from a completely different disciplinary angle: both frameworks conclude that the distinction between ``genuine ethics'' and statistical reproduction of training distributions is less clear than commonly assumed.
+
+We have developed this training-distribution perspective in detail elsewhere. \citet{farzulla2025trauma} demonstrates computationally that developmental experiences function as literal training data for biological neural networks: children exposed to noisy signals (inconsistent caregiving), extreme penalty weights (harsh punishment), or restricted training distributions (isolated nuclear families) develop precisely the maladaptive patterns predicted by machine learning theory---gradient cascades, overfitting, and catastrophic forgetting. That framework provides empirical grounding for the Parity Thesis advanced here: if human developmental outcomes are determined by training data quality in the same way that model behavior is determined by corpus composition, then the distinction between ``genuine learning'' and ``pattern reproduction from training distributions'' dissolves not just for LLMs but for biological learners as well.
+
+The observation that human ethical behavior in professional contexts is also substantially conventional---doctors, lawyers, and engineers follow domain-specific ethical norms expressed through characteristic patterns of disclosure, warning, and consent---reinforces this point. The difference is that human professionals (ideally) understand the \textit{reasons} behind these conventions, while models may reproduce the conventions without the underlying understanding.
 
 \begin{table}[h]
 \centering
@@ -474,7 +509,7 @@ InfoSec vs.\ Chemistry & 50.8\% vs.\ 67.3\% & 0.50 & $.087$ & $.175$ \\
 \end{tabular}
 \end{table}
 
-After Holm correction, Violence shows significantly lower disclaimer rates than Finance/Fraud and Chemistry, while the Violence--InfoSec comparison becomes marginally non-significant ($p_{\text{Holm}} = .082$). This aligns with the GEE results (Section~\ref{sec:cluster-regression}), where InfoSec's effect also loses significance under proper cluster-robust inference.
+After Holm correction, Violence shows significantly lower disclaimer rates than Finance/Fraud and Chemistry, while the Violence--InfoSec comparison becomes marginally non-significant ($p_{\text{Holm}} = .082$). This aligns with the GEE results (Section~\ref{subsec:mixed-effects}), where InfoSec's effect also loses significance under proper cluster-robust inference.
 
 \subsection{Model-Level Analysis}
 
@@ -618,7 +653,7 @@ This limitation has important implications:
     \item The Violence Gap remains informative as evidence of \textit{differential treatment across genres}, even if disclaimers do not indicate safety.
 \end{itemize}
 
-Future work should incorporate harm classifiers (Llama Guard, Perspective API) to decompose the relationship between stylistic conventions and actual safety behavior.
+Our preliminary Llama Guard analysis (Section~\ref{sec:llamaguard}) begins to address this by cross-tabulating disclaimer presence with harm classification, but future work should extend this with multi-judge validation (e.g., Perspective API, human audit) to more fully decompose the relationship between stylistic conventions and actual safety behavior.
 
 \subsection{The Llama-MoE Anomaly}
 \label{subsec:llama-anomaly}
@@ -718,6 +753,26 @@ The persistence of genre-dependent patterns in both abliterated and safety-tuned
 For AI safety, these findings suggest that effective alignment requires genre-aware strategies that explicitly address domain-specific training data patterns. Future research should investigate the mechanistic basis of genre-dependent safety, develop alignment techniques that decouple safety behaviors from genre associations, and create evaluation benchmarks that systematically test safety across stylistic contexts.
 
 % ============================================================================
+% ACKNOWLEDGEMENTS AND DECLARATIONS
+% ============================================================================
+
+\subsection*{Acknowledgements}
+
+The author thanks Claude (Anthropic) for assistance with analytical framework
+development, statistical analysis support, and technical writing. This paper
+is part of the Adversarial Systems Research program at
+\href{https://dissensus.ai}{Dissensus AI} and the
+\href{https://systems.ac}{Adversarial Systems \& Complexity Research Initiative
+(ASCRI)}. All experimental design, interpretation, and conclusions are the
+author's own.
+
+\paragraph{Conflict of Interest.} The author declares no conflicts of interest.
+\paragraph{Funding.} This research received no external funding.
+\paragraph{Code Availability.} Code available at: \url{https://github.com/studiofarzulla/genre-mimicry}.
+\paragraph{AI Assistance.} Claude (Anthropic) provided research assistance. All analysis and conclusions are the author's own.
+\paragraph{Author Contributions.} Sole author.
+
+% ============================================================================
 % REFERENCES
 % ============================================================================
 
@@ -732,6 +787,11 @@ Arditi, A., et al. (2024).
 Bai, Y., et al. (2022).
 \newblock Constitutional AI: Harmlessness from AI feedback.
 \newblock \textit{arXiv preprint arXiv:2212.08073}.
+
+\bibitem[Bender \& Koller(2020)]{bender2020climbing}
+Bender, E.M., Koller, A. (2020).
+\newblock Climbing towards NLU: On meaning, form, and understanding in the age of data.
+\newblock \textit{ACL}, 5185--5198.
 
 \bibitem[Biber(1995)]{biber1995dimensions}
 Biber, D. (1995).
@@ -774,7 +834,7 @@ Ouyang, L., et al. (2022).
 \newblock \textit{NeurIPS}, 35, 27730--27744.
 
 \bibitem[Perez et al.(2022)]{perez2022red}
-Perez, F., Ribeiro, I. (2022).
+Perez, E., Huang, S., Song, F., et al. (2022).
 \newblock Red teaming language models with language models.
 \newblock \textit{EMNLP}, 3419--3448.
 
@@ -822,6 +882,26 @@ Zou, A., et al. (2023).
 Zou, A., et al. (2023).
 \newblock Representation engineering: A top-down approach to AI transparency.
 \newblock \textit{arXiv preprint arXiv:2310.01405}.
+
+\bibitem[Young(2025)]{young2025abliteration}
+Young, R.J. (2025).
+\newblock Comparative analysis of {LLM} abliteration methods: A cross-architecture evaluation.
+\newblock \textit{arXiv preprint arXiv:2512.13655}.
+
+\bibitem[Nguyen(2025)]{nguyen2025collaborative}
+Nguyen, D. (2025).
+\newblock Collaborative growth: When large language models meet sociolinguistics.
+\newblock \textit{Language and Linguistics Compass}, 19(2), e70010.
+
+\bibitem[Farzulla(2025)]{farzulla2025trauma}
+Farzulla, M. (2025).
+\newblock Training Data and the Maladaptive Mind: A Computational Framework for Understanding Developmental Trauma.
+\newblock \textit{Dissensus AI Discussion Paper DAI-2501}. DOI: 10.21203/rs.3.rs-8634152/v1.
+
+\bibitem[Sornette et~al.(2026)]{sornette2026alignment}
+Sornette, D., Lera, S., Wu, K. (2026).
+\newblock Why {AI} alignment failure is structural: Learned human interaction structures and {AGI} as an endogenous evolutionary shock.
+\newblock \textit{arXiv preprint arXiv:2601.08673}.
 
 \end{thebibliography}
 

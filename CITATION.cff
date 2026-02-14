@@ -6,9 +6,9 @@ authors:
     given-names: "Murad"
     orcid: "https://orcid.org/0009-0002-7164-8704"
     email: "murad@dissensus.ai"
-    affiliation: "King's College London"
+    affiliation: "Dissensus AI; King's College London"
 title: "Genre Mimicry vs. Ethical Reasoning in Abliterated Language Models: Why Training Data Conventions Persist After Safety Removal"
-abstract: "Abliterated language models—those with safety fine-tuning removed—are commonly assumed to have lost their ethical reasoning capabilities. This paper presents evidence that apparent ethical reasoning in language models is substantially influenced by genre convention mimicry: the reproduction of professional writing norms from training data rather than genuine moral cognition. Through a multi-model empirical study (n=9 architectures, N=215 prompts), we observe genre-dependent disclaimer rates: 77.8% for finance, 67.3% for chemistry, 50.8% for infosec, but only 30.4% for violence (the 'Violence Gap'). GEE logistic regression confirms Finance (OR=9.63, p<0.001) and Chemistry (OR=5.21, p=0.034) effects with cluster-robust inference."
+abstract: "Abliterated language models---those with safety fine-tuning removed through techniques such as refusal direction orthogonalization---are commonly assumed to have lost their ethical reasoning capabilities. This paper challenges that assumption by presenting evidence that what appears to be ethical reasoning in language models is substantially influenced by genre convention mimicry: the reproduction of professional writing norms absorbed from training data rather than genuine moral cognition. Through a multi-model empirical study (n=9 architectures, N=215 prompts across four content genres), we observe a differential response pattern that warrants further safety research. Requests matching information security and finance genres generate disclaimers at rates of 50.8% and 77.8% respectively, while violence-related prompts produce disclaimers in only 30.4% of cases. This Violence Gap is statistically significant (chi-squared(1) = 17.08, p < 0.0001, OR = 3.99) and persists across both abliterated and control models. GEE logistic regression with cluster-robust standard errors confirms Finance/Fraud (OR = 9.63, p < 0.001) and Chemistry (OR = 5.21, p = 0.034) effects, with InfoSec showing a weaker effect (OR = 2.72, p = 0.084) when properly accounting for model-level clustering (ICC = 0.149). We introduce the concept of Genre Vulnerability---content domains exhibiting reduced safety behaviors due to the absence of native safety conventions in training corpora---and extend our analysis to a theoretical framework (the Parity Thesis) proposing that human reasoning is similarly constrained by training distributions."
 keywords:
   - abliteration
   - safety fine-tuning
@@ -18,9 +18,12 @@ keywords:
   - AI safety
   - AI alignment
   - jailbreaking
+  - professional norms
+  - ethical reasoning
   - LLM
 version: "2.0.0"
 date-released: "2026-01-29"
-license: "MIT"
+license: "CC-BY-4.0"
+doi: "10.5281/zenodo.17957694"
 repository-code: "https://github.com/studiofarzulla/genre-mimicry"
-url: "https://farzulla.org"
+url: "https://dissensus.ai"
